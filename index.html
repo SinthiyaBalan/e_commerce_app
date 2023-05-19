@@ -15,6 +15,21 @@
         <div class="btn_bkgr">
             <figure class="btn_container"><ion-icon name="mail"></ion-icon></figure>
         </div>
+
+        <nav class="nav-container">
+            <ul class="menu" id="nav-menu">
+              <li class="nav-item"><a href="#main" class="nav-link">Main</a></li>
+              <li class="nav-item"><a href="#top-sellers" class="nav-link">Top Sellers</a></li>
+              <li class="nav-item"><a href="#product-details" class="nav-link">Product Details</a></li>
+              <li class="nav-item"><a href="#contact-us" class="nav-link">Contact Us</a></li>
+            </ul>
+          </nav>
+          <div class="hamburger" id="ham-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
     </header>
 
   
@@ -23,7 +38,7 @@
 
 
         <section class="main_section_container">
-            <div class="main_text_container">
+            <div id="main" class="main_text_container">
                 <h2 class="decorate_text">Decorate your home</h2>
                 <h2 class="with_us">with us</h2>
             </div>
@@ -32,7 +47,7 @@
 
 
         <section class="cards">
-            <h2>Top selling products</h2>
+            <h2 id="top-sellers">Top selling products</h2>
             <article class="cards-container">
 
                 <div class="div1">
@@ -79,7 +94,7 @@
 
 
     <section class="product_page_container">
-        <h2>Product Details</h2>
+        <h2 id="product-details">Product Details</h2>
         <div class="prod_image_wrapper">
             <img src="/images/product_image.jpg">
         </div>
@@ -111,6 +126,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 
+<script src="main.js" defer></script>
 </body>
 
 </html>
