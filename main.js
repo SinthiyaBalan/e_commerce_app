@@ -21,12 +21,48 @@ fetch('https:dummyjson.com/products')
     response.json())
  .then (data => {
     const products = data.products;
-    const firstProduct = products[25];
-    const productPhotos = firstProduct.images;
+    const product25 = products[25];
+    const productPhotos = product25.images;
+
+    renderSlider(productPhotos)
     console.log('Product photos:', productPhotos)
  })
  .catch(error =>{
-    console.log('Error ', error)
- })
+    console.log('Error fetching product data: ', error)
+ });
+
+
+ function renderSlider(photos){
+   const slider = document.getElementById('slider');
+
+   photos.slice(0,4).forEach((photoUrl) => {
+      const image = document.createElement('img');
+      image.src = photoUrl;
+      slider.appendChild(image)
+      
+   });
+
+   const pagination = document.getElementById('pagination');
+   pagination.addEventListener('click', handlePaginationClick);
+
+   function handlePaginationClick(event){
+      const clickedDot = event.target;
+      console.log(event)
+      if(clickedDot.classList.contains('page-dot')){
+         const index = parseInt(clickedDot.dataset.index);
+         scrollToIndex(index)
+      }
+   }
+
+   function scrollToIndex(index){
+      const scrollAmount = index * slider.offsetWidth;
+      slider.scrollTo({
+         left: scrollAmount,
+         behavior : 'smooth'
+      })
+   }
+ }
+
+
 
  

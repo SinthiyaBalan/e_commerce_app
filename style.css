@@ -4,7 +4,8 @@
     --header-height: 100px;
     --footer-height: 100px;
     --primary-bckg-color: #F2F2EF;
-
+    --secondary-bckg-color: #7D94A5;
+    --accent-color:#67ECFB;
 }
 
 *{
@@ -69,6 +70,7 @@ ion-icon {
     height: calc(100% - var(--header-height) - var(--footer-height));
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 
@@ -254,11 +256,13 @@ footer {
 
 
   .slider {
+    width: 400px;
     display: flex;
     overflow-x: scroll;
   }
   .slider img {
     width: 100%;
+    height: 100%;
   }
   .pagination {
     display: flex;
@@ -272,7 +276,8 @@ footer {
     border-radius: 50%;
     margin: 0 5px;
     cursor: pointer;
+    
     &:hover {
-      background-color: red;
+      background-color: --accent-color;
     }
   }
