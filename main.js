@@ -24,7 +24,8 @@ fetch('https:dummyjson.com/products')
     const product25 = products[25];
     const productPhotos = product25.images;
 
-    renderSlider(productPhotos)
+    renderSlider(productPhotos);
+    renderProductDetails(product25);
     console.log('Product photos:', productPhotos)
  })
  .catch(error =>{
@@ -63,6 +64,22 @@ fetch('https:dummyjson.com/products')
    }
  }
 
+function renderProductDetails(product){
 
+   const titleElement = document.getElementById('product-title')
+   const descriptionElement = document.getElementById('product-description')
+   const priceElement = document.getElementById('product-price');
+   titleElement.innerText = product.title;
+   descriptionElement.innerText = product.description;
+   priceElement.innerText = `EUR ${product.price}`;
+
+   const buyBtn = document.getElementById('buy-btn');
+   buyBtn.addEventListener('click',alertOnclick);
+
+   function alertOnclick(){
+      alert(`${product.title} for EUR ${product.price} has been added to you`)
+   }
+
+}
 
  
